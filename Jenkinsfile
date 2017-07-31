@@ -1,18 +1,3 @@
-pipeline {
-  agent any
-  triggers {
-    pollSCM('H/5 * * * *')
-  }
-  
-  stages {
-    stage('Example') {
-      steps {
-        echo 'hello jenkins'
-      }
-    }
-  }
-}
-
 node {
   def mvnHome
   
@@ -37,3 +22,22 @@ node {
     }
   }
 }
+
+properties([
+    [
+        $class: 'GithubProjectProperty',
+        displayName: 'autotest.code.compiler',
+        projectUrlStr: 'https://github.com/LinuxSuRen/autotest.code.compiler'
+    ],
+    buildDiscarder(
+        logRotator(
+            artifactDaysToKeepStr: '',
+            artifactNumToKeepStr: '',
+            daysToKeepStr: '7',
+            numToKeepStr: '14'
+        )
+    ),
+    pipelineTriggers([
+        pollSCM('H/15 * * * *')
+    ])
+])
