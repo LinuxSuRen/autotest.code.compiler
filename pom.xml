@@ -69,4 +69,13 @@
 			<version>2.5</version>
 		</dependency>
 	</dependencies>
+	<scm>
+		<url>scm:git:https://github.com/LinuxSuRen/autotest.code.compiler</url>
+		<connection>scm:git:https://github.com/LinuxSuRen/autotest.code.compiler.git</connection>
+		<developerConnection>scm:git:https://github.com/LinuxSuRen/autotest.code.compiler.git</developerConnection>
+	</scm>
+	<issueManagement>
+		<url>https://github.com/LinuxSuRen/autotest.code.compiler/issues</url>
+		<system>GitHub Issues</system>
+	</issueManagement>
 </project>
