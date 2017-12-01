@@ -2,15 +2,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.surenpi.autotest</groupId>
-	<artifactId>autotest.code.compiler</artifactId>
-	<version>1.0.0-20170714</version>
-
 	<parent>
 		<groupId>com.surenpi.autotest</groupId>
 		<artifactId>autotest.parent</artifactId>
-		<version>1.0.1-20170618</version>
+		<version>1.0.1-20170815-SNAPSHOT</version>
 	</parent>
+
+	<groupId>com.surenpi.autotest</groupId>
+	<artifactId>autotest.code.compiler</artifactId>
+	<version>1.0.0-20171201-SNAPSHOT</version>
 
 	<name>autotest.code.compiler</name>
     
@@ -19,10 +19,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
