@@ -29,12 +29,12 @@ import org.eclipse.jdt.internal.compiler.env.ICompilationUnit;
 public class SuRenCompiler implements ICompilationUnit
 {
     private File file;
-    private String workDir;
+    private File workDir;
 
     public SuRenCompiler(File file, String workDir)
     {
         this.file = file;
-        this.workDir = workDir;
+        this.workDir = new File(workDir);
     }
 
     public char[] getContents()
@@ -56,7 +56,8 @@ public class SuRenCompiler implements ICompilationUnit
 
     public char[][] getPackageName()
     {
-        String fullPkgName = this.file.getParentFile().getAbsolutePath().replace(workDir, "");
+        String srcFileFullPath = this.file.getParentFile().getAbsolutePath();
+        String fullPkgName = srcFileFullPath.replace(workDir.getAbsolutePath(), "");
         fullPkgName = fullPkgName.replace("/", ".").replace("\\", ".");
         if (fullPkgName.startsWith("."))
             fullPkgName = fullPkgName.substring(1);
